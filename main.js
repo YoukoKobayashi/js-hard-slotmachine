@@ -4,9 +4,9 @@ const nowTime2 =
     document.getElementById("nowTime2");
 const nowTime3 =
     document.getElementById("nowTime3");
-nowTime.setAttribute("disable", "disable");
-nowTime2.setAttribute("disable", "disable");
-nowTime3.setAttribute("disable", "disable");
+// nowTime.setAttribute("disable", "disable");
+// nowTime2.setAttribute("disable", "disable");
+// nowTime3.setAttribute("disable", "disable");
 
 const setTime1 =
     document.getElementById("setTime1");
@@ -24,7 +24,19 @@ let i = 0;
 let i2 = 0;
 let i3 = 0;
 
+const init = () => {
+    startTimer.ariaDisabled = false;
+    setTime1.disabled = true;
+    setTime2.disabled = true;
+    setTime3.disabled = true;
+};
+init();
+
 startTimer.addEventListener("click", () => {
+    startTimer.ariaDisabled = true;
+    setTime1.disabled = false;
+    setTime2.disabled = false;
+    setTime3.disabled = false;
     clearInterval(timer1);
     timer1 = setInterval(() => {
         countUp1();
@@ -66,20 +78,36 @@ const countUp3 = () => {
 
 setTime1.addEventListener("click", () => {
     clearInterval(timer1);
+    setTime1.disabled = true;
+    judge();
 });
 setTime2.addEventListener("click", () => {
     clearInterval(timer2);
+    setTime2.disabled = true;
+    judge();
 });
 setTime3.addEventListener("click", () => {
     clearInterval(timer3);
-    if (
-        nowTime.textContent ===
-            nowTime2.textContent &&
-        nowTime.textContent ===
-            nowTime3.textContent
-    ) {
-        alert("成功です！");
-    } else {
-        alert("再挑戦してね！");
-    }
+    setTime3.disabled = true;
+    judge();
 });
+
+const judge = () => {
+    if (
+        setTime1.disabled === true &&
+        setTime2.disabled === true &&
+        setTime3.disabled === true
+    ) {
+        if (
+            nowTime.textContent ===
+                nowTime2.textContent &&
+            nowTime.textContent ===
+                nowTime3.textContent
+        ) {
+            alert("成功です！");
+        } else {
+            alert("再挑戦してね！");
+        }
+        init();
+    }
+};
