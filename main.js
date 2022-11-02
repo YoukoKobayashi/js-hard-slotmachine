@@ -159,11 +159,11 @@ const countUp1 = () => {
         nowTime4.textContent = `${i - 2}`;
         nowTime.textContent = `${i - 1}`;
         nowTime7.textContent = `${i}`;
-    } else if ((i = 1)) {
+    } else if (i === 1) {
         nowTime4.textContent = `${9}`;
         nowTime.textContent = `${i - 1}`;
         nowTime7.textContent = `${i}`;
-    } else if ((i = 0)) {
+    } else if (i === 0) {
         nowTime4.textContent = `${8}`;
         nowTime.textContent = `${9}`;
         nowTime7.textContent = `${i}`;
@@ -180,11 +180,11 @@ const countUp2 = () => {
         nowTime5.textContent = `${i2 - 2}`;
         nowTime2.textContent = `${i2 - 1}`;
         nowTime8.textContent = `${i2}`;
-    } else if ((i2 = 1)) {
+    } else if (i2 === 1) {
         nowTime5.textContent = `${9}`;
         nowTime2.textContent = `${i2 - 1}`;
         nowTime8.textContent = `${i2}`;
-    } else if ((i2 = 0)) {
+    } else if (i2 === 0) {
         nowTime5.textContent = `${8}`;
         nowTime2.textContent = `${9}`;
         nowTime8.textContent = `${i2}`;
@@ -201,11 +201,11 @@ const countUp3 = () => {
         nowTime6.textContent = `${i3 - 2}`;
         nowTime3.textContent = `${i3 - 1}`;
         nowTime9.textContent = `${i3}`;
-    } else if ((i3 = 1)) {
+    } else if (i3 === 1) {
         nowTime6.textContent = `${9}`;
         nowTime3.textContent = `${i3 - 1}`;
         nowTime9.textContent = `${i3}`;
-    } else if ((i3 = 0)) {
+    } else if (i3 === 0) {
         nowTime6.textContent = `${8}`;
         nowTime3.textContent = `${9}`;
         nowTime9.textContent = `${i3}`;
